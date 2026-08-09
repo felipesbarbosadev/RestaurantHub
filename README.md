@@ -230,8 +230,10 @@ No Linux podem ser configuradas, por exemplo, com:
 ```bash
 export DB_USERNAME="postgres"
 export DB_PASSWORD="sua-senha-do-postgres"
-export JWT_SECRET="sua-chave-jwt-aqui"
+export JWT_SECRET="sua-chave-jwt-com-no-minimo-32-caracteres"
 ```
+
+A chave utilizada em `JWT_SECRET` deve possuir no mínimo 32 caracteres.
 
 Substitua os valores de exemplo de acordo com a configuração do seu ambiente.
 
