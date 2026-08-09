@@ -157,46 +157,46 @@ Atualmente o projeto possui migrations para criação inicial do banco e altera�
 
 ### Autenticação
 
-| Método | Endpoint |
-| --- | --- |
-| POST | `/auth/login` |
+| Método | Endpoint      |
+| ------ | ------------- |
+| POST   | `/auth/login` |
 
 ### Usuários
 
-| Método | Endpoint |
-| --- | --- |
-| GET | `/usuarios` |
-| GET | `/usuarios/{id}` |
-| POST | `/usuarios` |
+| Método | Endpoint         |
+| ------ | ---------------- |
+| GET    | `/usuarios`      |
+| GET    | `/usuarios/{id}` |
+| POST   | `/usuarios`      |
 | DELETE | `/usuarios/{id}` |
 
 ### Produtos
 
-| Método | Endpoint |
-| --- | --- |
-| GET | `/produtos` |
-| GET | `/produtos/{id}` |
-| POST | `/produtos` |
+| Método | Endpoint         |
+| ------ | ---------------- |
+| GET    | `/produtos`      |
+| GET    | `/produtos/{id}` |
+| POST   | `/produtos`      |
 | DELETE | `/produtos/{id}` |
 
 ### Pedidos
 
-| Método | Endpoint |
-| --- | --- |
-| GET | `/pedidos` |
-| GET | `/pedidos/{id}` |
-| GET | `/pedidos?canalPedido=APP` |
-| POST | `/pedidos` |
-| PATCH | `/pedidos/{id}/status` |
-| DELETE | `/pedidos/{id}` |
+| Método | Endpoint                   |
+| ------ | -------------------------- |
+| GET    | `/pedidos`                 |
+| GET    | `/pedidos/{id}`            |
+| GET    | `/pedidos?canalPedido=APP` |
+| POST   | `/pedidos`                 |
+| PATCH  | `/pedidos/{id}/status`     |
+| DELETE | `/pedidos/{id}`            |
 
 ### Pagamentos
 
-| Método | Endpoint |
-| --- | --- |
-| GET | `/pagamentos` |
-| GET | `/pagamentos/{id}` |
-| POST | `/pagamentos` |
+| Método | Endpoint           |
+| ------ | ------------------ |
+| GET    | `/pagamentos`      |
+| GET    | `/pagamentos/{id}` |
+| POST   | `/pagamentos`      |
 | DELETE | `/pagamentos/{id}` |
 
 ---
@@ -206,30 +206,34 @@ Atualmente o projeto possui migrations para criação inicial do banco e altera�
 Clone o projeto:
 
 ```bash
-git clone https://github.com/SEU-USUARIO/restauranthub.git
+git clone https://github.com/felipesbarbosadev/RestaurantHub.git
 ```
 
 Entre na pasta do projeto:
 
 ```bash
-cd restauranthub
+cd RestaurantHub
 ```
 
-É necessário ter o PostgreSQL configurado e criar o banco utilizado pela aplicação.
+É necessário ter o PostgreSQL instalado.
 
-Depois configure os dados de acesso ao banco no arquivo:
+Crie o banco utilizado pela aplicação:
 
-```text
-src/main/resources/application.yaml
+```sql
+CREATE DATABASE restauranthub;
 ```
 
-A aplicação também utiliza uma variável de ambiente para a chave JWT.
+As configurações de acesso ao banco e a chave utilizada pelo JWT são definidas através de variáveis de ambiente.
 
-No Linux pode ser configurada, por exemplo, com:
+No Linux podem ser configuradas, por exemplo, com:
 
 ```bash
+export DB_USERNAME="postgres"
+export DB_PASSWORD="sua-senha-do-postgres"
 export JWT_SECRET="sua-chave-jwt-aqui"
 ```
+
+Substitua os valores de exemplo de acordo com a configuração do seu ambiente.
 
 Depois execute:
 
@@ -242,6 +246,14 @@ A aplicação será iniciada por padrão na porta:
 ```text
 http://localhost:8080
 ```
+
+Para executar os testes do projeto:
+
+```bash
+./mvnw clean test
+```
+
+As variáveis de ambiente precisam estar configuradas no terminal antes da execução da aplicação ou dos testes.
 
 ---
 
