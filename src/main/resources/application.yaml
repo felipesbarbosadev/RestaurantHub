@@ -1,3 +1,31 @@
 spring:
   application:
     name: restauranthub
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/restauranthub
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: 8080
+
+security:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-seconds: 3600

@@ -1,0 +1,1569 @@
+{
+  "info": {
+    "_postman_id": "30a0d6ad-fc49-4d6d-89bc-8a2c1b8e33cc",
+    "name": "RestaurantHub API",
+    "description": "API REST do projeto acadêmico RestaurantHub.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57081393",
+    "_collection_link": "https://go.postman.co/collection/57081393-30a0d6ad-fc49-4d6d-89bc-8a2c1b8e33cc?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Usuários",
+      "item": [
+        {
+          "name": "Listar Usuários",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiJXQmxBZm52SzlqTkRXb0VEUm1HUkxjU2lUS2k4RENjSUVvYUYyWjFlZnJRIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJyZXN0YXVyYW50aHViIiwic3ViIjoiYWRtaW5AcmVzdGF1cmFudGh1Yi5jb20iLCJleHAiOjE3ODYyMTg3OTcsImlhdCI6MTc4NjIxNTE5Nywicm9sZXMiOlsiQURNSU4iXX0.1mPyQp5xeBXqjNTAwIuAi8y47o19jr_5KJ4KHcnwdUI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar Usuário",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Administrador\",\n  \"email\": \"admin@restauranthub.com\",\n  \"senha\": \"123456\",\n  \"role\": \"ADMIN\",\n  \"consentimentoLgpd\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar usuario por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir Usuaáio",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Unidades",
+      "item": [
+        {
+          "name": "Criar Unidades",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"nome\": \"RestaurantHub Centro\",\n    \"endereco\": \"Rua XV de Novembro, 1000\",\n    \"telefone\": \"(41) 99999-0000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/unidades",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "unidades"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Unidades",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/unidades",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "unidades"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar unidade por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/unidades/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "unidades",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir unidade",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/unidades/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "unidades",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Criar Produto",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiJXQmxBZm52SzlqTkRXb0VEUm1HUkxjU2lUS2k4RENjSUVvYUYyWjFlZnJRIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJyZXN0YXVyYW50aHViIiwic3ViIjoiYWRtaW5AcmVzdGF1cmFudGh1Yi5jb20iLCJleHAiOjE3ODYwNzI0NjEsImlhdCI6MTc4NjA2ODg2MSwicm9sZXMiOlsiQURNSU4iXX0.mBZZ_-6FDIzg6TvN0zrMHq8GDufnUSlgXUfmUY_a2fE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Produto Temporário\",\n  \"descricao\": \"Produto criado apenas para teste de exclusão.\",\n  \"categoria\": \"TESTE\",\n  \"imagemUrl\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Produto",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiJXQmxBZm52SzlqTkRXb0VEUm1HUkxjU2lUS2k4RENjSUVvYUYyWjFlZnJRIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJyZXN0YXVyYW50aHViIiwic3ViIjoiYWRtaW5AcmVzdGF1cmFudGh1Yi5jb20iLCJleHAiOjE3ODYwNzI0NjEsImlhdCI6MTc4NjA2ODg2MSwicm9sZXMiOlsiQURNSU4iXX0.mBZZ_-6FDIzg6TvN0zrMHq8GDufnUSlgXUfmUY_a2fE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar produto por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir produto",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiJXQmxBZm52SzlqTkRXb0VEUm1HUkxjU2lUS2k4RENjSUVvYUYyWjFlZnJRIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJyZXN0YXVyYW50aHViIiwic3ViIjoiYWRtaW5AcmVzdGF1cmFudGh1Yi5jb20iLCJleHAiOjE3ODYwNzI0NjEsImlhdCI6MTc4NjA2ODg2MSwicm9sZXMiOlsiQURNSU4iXX0.mBZZ_-6FDIzg6TvN0zrMHq8GDufnUSlgXUfmUY_a2fE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cardapio",
+      "item": [
+        {
+          "name": "Criar item do cardapio",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"produtoId\": 1,\n    \"unidadeId\": 1,\n    \"preco\": 18.90\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/cardapios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cardapios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Cardápios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cardapios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cardapios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar item do cardápio por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cardapios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cardapios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir item do cardápio",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cardapios/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cardapios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Estoques",
+      "item": [
+        {
+          "name": "Criar Estoques",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"unidadeId\": 1,\n  \"produtoId\": 1,\n  \"quantidade\": 30\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/estoques",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "estoques"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Estoques",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/estoques",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "estoques"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar estoque por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/estoques/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "estoques",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir estoque",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/estoques/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "estoques",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pedidos",
+      "item": [
+        {
+          "name": "Criar Pedido",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 3,\n  \"unidadeId\": 1,\n  \"canalPedido\": \"WEB\",\n  \"valorTotal\": 25.00\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pedidos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Pedidos",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiJXQmxBZm52SzlqTkRXb0VEUm1HUkxjU2lUS2k4RENjSUVvYUYyWjFlZnJRIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJyZXN0YXVyYW50aHViIiwic3ViIjoiYWRtaW5AcmVzdGF1cmFudGh1Yi5jb20iLCJleHAiOjE3ODYyMTg3OTcsImlhdCI6MTc4NjIxNTE5Nywicm9sZXMiOlsiQURNSU4iXX0.1mPyQp5xeBXqjNTAwIuAi8y47o19jr_5KJ4KHcnwdUI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pedidos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar pedido por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pedidos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pedidos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir pedido",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pedidos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pedidos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Itens-Pedidos",
+      "item": [
+        {
+          "name": "Criar Itens",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"pedidoId\": 1,\n    \"cardapioId\": 1,\n    \"quantidade\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/itens-pedido",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "itens-pedido"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar itens do pedido",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/itens-pedido",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "itens-pedido"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar item por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/itens-pedido/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "itens-pedido",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir item",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/itens-pedido/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "itens-pedido",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pagamentos",
+      "item": [
+        {
+          "name": "Registrar Pagamentos",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_secret_0laz}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pedidoId\":2,\n  \"formaPagamento\": \"PIX\",\n  \"resultadoMock\": \"RECUSADO\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pagamentos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pagamentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Pagamentos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pagamentos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pagamentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar pagamento por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pagamentos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pagamentos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir pagamento",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pagamentos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pagamentos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Autenticação",
+      "item": [
+        {
+          "name": "Usuario ADM",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@restauranthub.com\",\n  \"senha\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Usuario Cliente",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"maria@email.com\",\n  \"senha\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Status",
+      "item": [
+        {
+          "name": "Mudar Status",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiJXQmxBZm52SzlqTkRXb0VEUm1HUkxjU2lUS2k4RENjSUVvYUYyWjFlZnJRIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJyZXN0YXVyYW50aHViIiwic3ViIjoiYWRtaW5AcmVzdGF1cmFudGh1Yi5jb20iLCJleHAiOjE3ODYwNzQ2MzQsImlhdCI6MTc4NjA3MTAzNCwicm9sZXMiOlsiQURNSU4iXX0.n4lTYu61EkGVQP2YiX9UDpB-5FFst_wXQWhNkAR12Ow",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Batata\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pedidos/1/status",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pedidos",
+                "1",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Testes do Edital",
+      "item": [
+        {
+          "name": "T01 - Login válido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const resposta = pm.response.json();",
+                  "",
+                  "pm.collectionVariables.set(\"token\", resposta.accessToken);",
+                  "",
+                  "pm.test(\"Login realizado com sucesso\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Access token foi retornado\", function () {",
+                  "    pm.expect(resposta.accessToken).to.exist;",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@restauranthub.com\",\n  \"senha\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "T02 - Listar pedidos autenticado",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status deve ser 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Resposta deve ser uma lista\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "    pm.expect(resposta).to.be.an(\"array\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pedidos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "T03 - Criar pedido válido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status deve ser 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Status deve ser 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Pedido deve iniciar como PENDENTE\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "    pm.expect(resposta.status).to.eql(\"PENDENTE\");",
+                  "});",
+                  "",
+                  "pm.test(\"Canal do pedido deve ser TOTEM\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "    pm.expect(resposta.canalPedido).to.eql(\"TOTEM\");",
+                  "});",
+                  "",
+                  "const pedido = pm.response.json();",
+                  "",
+                  "pm.collectionVariables.set(\"pedidoIdTeste\", pedido.id);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 3,\n  \"unidadeId\": 1,\n  \"canalPedido\": \"TOTEM\",\n  \"valorTotal\": 35.00\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pedidos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "T04 - Adicionar item ao pedido",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status deve ser 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Quantidade deve ser maior que zero\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "    pm.expect(resposta.quantidade).to.be.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Subtotal deve ser calculado corretamente\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "",
+                  "    const subtotalEsperado =",
+                  "        resposta.quantidade * resposta.precoUnitario;",
+                  "",
+                  "    pm.expect(Number(resposta.subtotal))",
+                  "        .to.eql(Number(subtotalEsperado.toFixed(2)));",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pedidoId\": {{pedidoIdTeste}},\n  \"cardapioId\": 1,\n  \"quantidade\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/itens-pedido",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "itens-pedido"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "T05 - Pagamento mock aprovado",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status deve ser 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Pagamento deve estar APROVADO\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "    pm.expect(resposta.status).to.eql(\"APROVADO\");",
+                  "});",
+                  "",
+                  "pm.test(\"Valor do pagamento deve ser maior que zero\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "    pm.expect(Number(resposta.valor)).to.be.above(0);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pedidoId\": {{pedidoIdTeste}},\n  \"formaPagamento\": \"PIX\",\n  \"resultadoMock\": \"APROVADO\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pagamentos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pagamentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AUX - Criar pedido para pagamento recusado",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const resposta = pm.response.json();",
+                  "",
+                  "pm.collectionVariables.set(",
+                  "    \"pedidoIdPagamentoRecusado\",",
+                  "    resposta.id",
+                  ");",
+                  "",
+                  "console.log(",
+                  "    \"pedidoIdPagamentoRecusado salvo:\",",
+                  "    resposta.id",
+                  ");"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": 3,\n  \"unidadeId\": 1,\n  \"canalPedido\": \"WEB\",\n  \"valorTotal\": 25.00\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pedidos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "T06 - Pagamento mock recusado",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status deve ser 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Pagamento deve estar RECUSADO\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "    pm.expect(resposta.status).to.eql(\"RECUSADO\");",
+                  "});",
+                  "",
+                  "pm.test(\"Valor do pagamento deve ser maior que zero\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "    pm.expect(Number(resposta.valor)).to.be.above(0);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pedidoId\": {{pedidoIdPagamentoRecusado}},\n  \"formaPagamento\": \"PIX\",\n  \"resultadoMock\": \"RECUSADO\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pagamentos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pagamentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "T07 - Acesso sem token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status deve ser 401\", function () {",
+                  "    pm.response.to.have.status(401);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pedidos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AUX - Login CLIENTE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Login CLIENTE deve retornar 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "const resposta = pm.response.json();",
+                  "",
+                  "pm.collectionVariables.set(",
+                  "    \"tokenCliente\",",
+                  "    resposta.accessToken",
+                  ");"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"maria@email.com\",\n  \"senha\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "T08 - Cliente sem permissão para excluir",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status deve ser 403\", function () {",
+                  "    pm.response.to.have.status(403);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{tokenCliente}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "T09 - Produto com dados inválidos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status deve ser 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Resposta deve indicar dados inválidos\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "",
+                  "    pm.expect(resposta.status).to.eql(400);",
+                  "    pm.expect(resposta.erro).to.eql(\"Dados inválidos\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"\",\n  \"descricao\": \"Teste de validação\",\n  \"categoria\": \"\",\n  \"imagemUrl\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "T10 - Recurso inexistente",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status deve ser 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "pm.test(\"Resposta deve indicar recurso não encontrado\", function () {",
+                  "    const resposta = pm.response.json();",
+                  "",
+                  "    pm.expect(resposta.status).to.eql(404);",
+                  "    pm.expect(resposta.erro).to.eql(\"Recurso não encontrado\");",
+                  "    pm.expect(resposta.mensagem).to.eql(\"Pedido não encontrado.\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pedidos/9999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pedidos",
+                "9999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "pedidoIdTeste",
+      "value": ""
+    },
+    {
+      "key": "pedidoIdPagamentoRecusado",
+      "value": ""
+    },
+    {
+      "key": "tokenCliente",
+      "value": ""
+    },
+    {
+      "key": "auth_secret_0laz",
+      "secret": true
+    }
+  ]
+}
